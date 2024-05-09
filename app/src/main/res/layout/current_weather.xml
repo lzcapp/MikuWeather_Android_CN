@@ -1,0 +1,80 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.MikuWeather.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MikuWeather.AppWidgetContainer">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/appwidget_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/appwidget_text"
+                android:text="Cannot fetch data"
+                android:textAlignment="center"
+                android:textColor="@color/setting.textTitle"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/widgetTextLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="@color/weathertext.white" />
+
+            <TextView
+                android:id="@+id/widgetQueryLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unavailable"
+                android:textColor="@color/setting.textTitle"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/spaaace"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="  "
+                android:textColor="@color/setting.textTitle"
+                android:textSize="6dp" />
+
+            <TextView
+                android:id="@+id/widgetTextWeather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Current condition"
+                android:textColor="@color/weathertext.white" />
+
+            <TextView
+                android:id="@+id/widgetCurrentWeather"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unavailable"
+                android:textColor="@color/setting.textTitle"
+                android:textSize="18dp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/widgetWeatherIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            app:srcCompat="@mipmap/tenki_hare" />
+    </LinearLayout>
+</RelativeLayout>
