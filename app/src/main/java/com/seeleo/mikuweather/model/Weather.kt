@@ -1,4 +1,4 @@
-package com.thepseudoartistclan.mikuweather.model
+package com.seeleo.mikuweather.model
 
 data class Weather(
     val current: Current,

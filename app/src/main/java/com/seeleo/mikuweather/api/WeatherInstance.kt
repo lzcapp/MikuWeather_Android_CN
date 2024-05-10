@@ -1,6 +1,6 @@
-package com.thepseudoartistclan.mikuweather.api
+package com.seeleo.mikuweather.api
 
-import com.thepseudoartistclan.mikuweather.model.Weather
+import com.seeleo.mikuweather.model.Weather
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

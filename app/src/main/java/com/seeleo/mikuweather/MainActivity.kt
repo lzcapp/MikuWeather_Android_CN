@@ -1,4 +1,4 @@
-package com.thepseudoartistclan.mikuweather
+package com.seeleo.mikuweather
 
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
@@ -9,11 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.thepseudoartistclan.mikuweather.api.WeatherService
-import com.thepseudoartistclan.mikuweather.model.Hour
-import com.thepseudoartistclan.mikuweather.repository.WeatherRepository
-import com.thepseudoartistclan.mikuweather.viewmodel.WeatherViewModel
-import com.thepseudoartistclan.mikuweather.viewmodel.WeatherViewModelFactory
+import com.seeleo.mikuweather.api.WeatherService
+import com.seeleo.mikuweather.model.Hour
+import com.seeleo.mikuweather.repository.WeatherRepository
+import com.seeleo.mikuweather.viewmodel.WeatherViewModel
+import com.seeleo.mikuweather.viewmodel.WeatherViewModelFactory
+import com.thepseudoartistclan.mikuweather.LocationHelper
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch

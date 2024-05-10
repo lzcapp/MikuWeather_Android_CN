@@ -1,11 +1,11 @@
-package com.thepseudoartistclan.mikuweather.viewmodel
+package com.seeleo.mikuweather.viewmodel
 
 import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.thepseudoartistclan.mikuweather.model.Weather
-import com.thepseudoartistclan.mikuweather.repository.WeatherRepository
+import com.seeleo.mikuweather.model.Weather
+import com.seeleo.mikuweather.repository.WeatherRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

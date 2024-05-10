@@ -1,4 +1,4 @@
-package com.thepseudoartistclan.mikuweather
+package com.seeleo.mikuweather
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.thepseudoartistclan.mikuweather.model.Hour
+import com.seeleo.mikuweather.model.Hour
 
 class ForecastAdapter(private var forecastList: ArrayList<Hour>) : RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

@@ -1,8 +1,8 @@
-package com.thepseudoartistclan.mikuweather.viewmodel
+package com.seeleo.mikuweather.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.thepseudoartistclan.mikuweather.repository.WeatherRepository
+import com.seeleo.mikuweather.repository.WeatherRepository
 
 class WeatherViewModelFactory(private val weatherRepository: WeatherRepository) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

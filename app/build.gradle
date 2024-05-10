@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace 'com.thepseudoartistclan.mikuweather'
+    namespace 'com.seeleo.mikuweather'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.thepseudoartistclan.mikuweather"
+        applicationId "com.seeleo.mikuweather"
         minSdk 28
         targetSdk 33
         versionCode 1

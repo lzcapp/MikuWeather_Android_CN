@@ -1,4 +1,4 @@
-package com.thepseudoartistclan.mikuweather.api
+package com.seeleo.mikuweather.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

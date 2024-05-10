@@ -5,6 +5,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
+import com.seeleo.mikuweather.R
 
 /**
  * Implementation of App Widget functionality.
