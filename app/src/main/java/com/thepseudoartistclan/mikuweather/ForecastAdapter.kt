@@ -1,6 +1,5 @@
 package com.thepseudoartistclan.mikuweather
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,8 +27,7 @@ class ForecastAdapter(private var forecastList: ArrayList<Hour>) : RecyclerView.
             itemView.setOnClickListener(this)
         }
 
-        override fun onClick(v: View) {
-        }
+        override fun onClick(v: View) {}
 
         fun bind(forecast: Hour) {
             this.forecast = forecast
@@ -39,9 +37,10 @@ class ForecastAdapter(private var forecastList: ArrayList<Hour>) : RecyclerView.
             val tempView: TextView = view.findViewById(R.id.forecastTemp)
             val conditionView: TextView = view.findViewById(R.id.forecastCondition)
 
-            timeView.setText(forecast.time)
-            tempView.setText(forecast.temp_c.toString() + "°C")
-            conditionView.setText(forecast.condition.text)
+            timeView.text = forecast.time
+            val temp = forecast.temp_c.toString() + " °C";
+            tempView.text = temp
+            conditionView.text = forecast.condition.text
 
             var dayCheck = false
             if (forecast.is_day == 1) dayCheck = true
