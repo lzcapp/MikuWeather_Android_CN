@@ -10,14 +10,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.seeleo.mikuweather.api.WeatherService
 import com.seeleo.mikuweather.model.Hour
 import com.seeleo.mikuweather.repository.WeatherRepository
 import com.seeleo.mikuweather.viewmodel.WeatherViewModel
 import com.seeleo.mikuweather.viewmodel.WeatherViewModelFactory
 import com.thepseudoartistclan.mikuweather.LocationHelper
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -122,7 +121,7 @@ class MainActivity : AppCompatActivity() {
             currentTime.set(Calendar.SECOND, 0)
             currentTime.set(Calendar.MILLISECOND, 0)
             val currentTimestamp = currentTime.timeInMillis / 1000
-            it.forecast.forecastday[0].hour.filter { it.time_epoch >= currentTimestamp }.let { hour.addAll(it) }
+            it.forecast.forecastday[0].hour.filter { it.time_epoch > currentTimestamp }.let { hour.addAll(it) }
             it.forecast.forecastday[1].hour.let { hour.addAll(it) }
 
             val forecastRecyclerView = findViewById<RecyclerView>(R.id.forecast_fragment)
