@@ -3,6 +3,7 @@ package com.seeleo.mikuweather
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -15,11 +16,14 @@ import com.seeleo.mikuweather.repository.WeatherRepository
 import com.seeleo.mikuweather.viewmodel.WeatherViewModel
 import com.seeleo.mikuweather.viewmodel.WeatherViewModelFactory
 import com.thepseudoartistclan.mikuweather.LocationHelper
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.time.LocalTime
 import java.util.*
+
 
 @Suppress("unused")
 private const val TAG: String = "LocationServices"
@@ -41,6 +45,15 @@ class MainActivity : AppCompatActivity() {
 
         GlobalScope.launch {
             getCurrentLocation()
+        }
+
+        val refreshLayout = findViewById<SwipeRefreshLayout>(R.id.refreshLayout)
+
+        refreshLayout.setOnRefreshListener {
+            Handler().postDelayed({
+                refreshLayout.isRefreshing = false
+                weatherUpdate()
+            }, 3000)
         }
 
         weatherUpdate()
