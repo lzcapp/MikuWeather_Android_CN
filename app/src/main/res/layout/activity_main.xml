@@ -10,6 +10,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:context=".MainActivity">
 
         <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -17,10 +21,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Hello World!">
-            <ListView
-                android:id="@+id/listView"
-                android:layout_width="match_parent"
+
+            <Space
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
     </LinearLayout>
 
@@ -55,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:text="Sapporo, Japan"
+        android:text="Null, Null"
         android:textColor="@color/setting.textTitle"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,7 +112,7 @@
                     android:id="@+id/currentTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="39.3"
+                    android:text="00.0"
                     android:textColor="@color/setting.textTitle"
                     android:textSize="40sp" />
 
@@ -126,7 +131,7 @@
                 android:id="@+id/conditionString"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sunny?"
+                android:text="Null Null"
                 android:textColor="@color/setting.textTitle"
                 android:textSize="24sp" />
         </LinearLayout>
