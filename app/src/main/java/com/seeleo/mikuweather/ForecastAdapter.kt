@@ -38,7 +38,7 @@ class ForecastAdapter(private var forecastList: ArrayList<Hour>) : RecyclerView.
             val conditionView: TextView = view.findViewById(R.id.forecastCondition)
 
             timeView.text = forecast.time
-            val temp = forecast.temp_c.toString() + " °C";
+            val temp = forecast.temp_c.toString() + " °C"
             tempView.text = temp
             conditionView.text = forecast.condition.text
 

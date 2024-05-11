@@ -1,12 +1,16 @@
 package com.seeleo.mikuweather
 
+import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,16 +20,14 @@ import com.seeleo.mikuweather.model.Hour
 import com.seeleo.mikuweather.repository.WeatherRepository
 import com.seeleo.mikuweather.viewmodel.WeatherViewModel
 import com.seeleo.mikuweather.viewmodel.WeatherViewModelFactory
-import com.thepseudoartistclan.mikuweather.LocationHelper
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import java.time.LocalTime
 import java.util.*
 
-
-@Suppress("unused")
-private const val TAG: String = "LocationServices"
+private const val TAG = "LocationServices"
+private const val LOCATION_PERMISSION_CODE = 1
 
 class MainActivity : AppCompatActivity() {
     //Query Location
@@ -49,23 +51,41 @@ class MainActivity : AppCompatActivity() {
         val refreshLayout = findViewById<SwipeRefreshLayout>(R.id.refreshLayout)
 
         refreshLayout.setOnRefreshListener {
+            @Suppress("DEPRECATION")
             Handler().postDelayed({
                 refreshLayout.isRefreshing = false
                 weatherUpdate()
-            }, 3000)
+            }, 1000)
         }
+
+        checkLocationPermission(REQUEST_LOCATION_PERMISSION)
 
         weatherUpdate()
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    private fun Context.checkLocationPermission(locationRequestCode : Int) {
+        if (!checkSinglePermission(Manifest.permission.ACCESS_FINE_LOCATION) ||
+            !checkSinglePermission(Manifest.permission.ACCESS_COARSE_LOCATION)) {
+            val permList = arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            )
+            requestPermissions(permList, locationRequestCode)
+        }
+    }
+
+    private fun Context.checkSinglePermission(permission: String) : Boolean {
+        return ContextCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED
+    }
+
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        when (requestCode) {
-            REQUEST_LOCATION_PERMISSION -> {
-                if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                    finish()
-                }
-            }
+        requestCode != LOCATION_PERMISSION_CODE
+        if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
+            Log.d(TAG, "Permission denied")
+        } else {
+            Log.d(TAG, "Permission granted")
         }
     }
 

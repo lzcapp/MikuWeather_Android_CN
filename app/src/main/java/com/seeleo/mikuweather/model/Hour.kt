@@ -1,5 +1,6 @@
 package com.seeleo.mikuweather.model
 
+@Suppress("PropertyName", "SpellCheckingInspection")
 data class Hour(
     val chance_of_rain: Int,
     val chance_of_snow: Int,

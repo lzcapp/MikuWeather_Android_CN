@@ -1,15 +1,15 @@
-package com.thepseudoartistclan.mikuweather
+package com.seeleo.mikuweather
 
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
-import com.seeleo.mikuweather.R
 
 /**
  * Implementation of App Widget functionality.
  */
+@Suppress("SpellCheckingInspection")
 class CurrentWeather : AppWidgetProvider() {
     private var coordinates = "Unavailable"
     private var currentcondition = "Unavailable"

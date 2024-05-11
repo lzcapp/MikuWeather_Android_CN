@@ -1,5 +1,6 @@
 package com.seeleo.mikuweather.model
 
+@Suppress("SpellCheckingInspection", "PropertyName")
 data class Day(
     val avghumidity: Double,
     val avgtemp_c: Double,

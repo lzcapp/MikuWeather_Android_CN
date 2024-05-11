@@ -1,5 +1,6 @@
 package com.seeleo.mikuweather.model
 
+@Suppress("SpellCheckingInspection", "PropertyName")
 data class Astro(
     val moon_illumination: String,
     val moon_phase: String,

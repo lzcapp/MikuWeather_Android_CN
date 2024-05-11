@@ -1,5 +1,6 @@
 package com.seeleo.mikuweather.model
 
+@Suppress("PropertyName", "SpellCheckingInspection")
 data class Current(
     val cloud: Int,
     val condition: Condition,

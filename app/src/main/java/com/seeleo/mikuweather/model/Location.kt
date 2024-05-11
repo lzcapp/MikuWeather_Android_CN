@@ -1,5 +1,6 @@
 package com.seeleo.mikuweather.model
 
+@Suppress("PropertyName")
 data class Location(
     val country: String,
     val lat: Double,
