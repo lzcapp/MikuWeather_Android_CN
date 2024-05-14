@@ -3,10 +3,12 @@ package com.seeleo.mikuweather
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -445,5 +447,15 @@ class MainActivity : AppCompatActivity() {
                 weatherIcon.setImageResource(R.mipmap.tenki_kumori_yuki_kaminari)
             })
         }
+    }
+
+    private fun openSettings() {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
+    }
+
+    @Suppress("UNUSED_PARAMETER")
+    fun openSettings(view: View) {
+        openSettings()
     }
 }
